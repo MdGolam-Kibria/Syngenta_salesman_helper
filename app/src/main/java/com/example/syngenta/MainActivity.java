@@ -11,8 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.syngenta.countAll.CustomAdapterForCountAll;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,20 +37,22 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "no data in your database", Toast.LENGTH_LONG).show();
         }
         while (cursor.moveToNext()) {
-            listDataALL.add(cursor.getString(0) + " \n" + cursor.getString(1) + " \n" + cursor.getString(2) + " \n" + cursor.getString(3) + "\n" + cursor.getString(4));
+            listDataALL.add(cursor.getString(1) + " \n" + cursor.getString(2) + " \n" + cursor.getString(3) + "\n" + cursor.getString(4));
             price.add(cursor.getString(3));
             cartonNumber.add(cursor.getString(4));
 
         }
 
         if (price.size() == cartonNumber.size()) {
-            Integer totalEach = 1;
+            Integer totalEach;
+            Integer totalValue = 0;
             for (int i = 0; i < price.size(); i++) {
                 Integer temp = Integer.parseInt(price.get(i));
                 Integer temp2 = Integer.parseInt(cartonNumber.get(i));
-                totalEach *= temp * temp2;
+                totalEach = temp * temp2;
+                totalValue = totalValue+totalEach;
             }
-            total.setText(String.valueOf("In total = "+totalEach));
+            total.setText(String.valueOf("In total = "+totalValue));
         }
         CustomAdapterForCountAll customAdapter = new CustomAdapterForCountAll(MainActivity.this, listDataALL, price, cartonNumber);
         totalCalRecyccler.setAdapter(customAdapter);

@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/allInfo"
-        android:layout_width="259dp"
+        android:layout_width="170dp"
         android:layout_height="140dp"
         android:text="allProductInfoallProductInfoallProductInfoallProductInfoallProductInfoallProductInfoallProductInfo"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -28,9 +28,10 @@
             android:id="@+id/totalPriceForAproduct"
             android:text="total"
             android:textStyle="bold"
+            android:gravity="center_horizontal"
             android:textSize="25dp"
             android:textColor="#E91E63"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
