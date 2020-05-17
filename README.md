@@ -1,7 +1,11 @@
 # Syngenta_salesman_helper
 This is a salesman helper app for my brother company. <br/> 
 
-###This project of my brother's company Syngenta Company.<br/>
+###This project of my brother's company syngenta Company project.<br/>
+
+![image](https://user-images.githubusercontent.com/61331272/82148439-f8bdb800-9875-11ea-9525-523c4299c516.png)
+
+
 - add product details
 - calculates  product cost by her each product cost.
 - total sales cost.
