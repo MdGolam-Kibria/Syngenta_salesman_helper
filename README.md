@@ -1,6 +1,7 @@
 # Syngenta_salesman_helper
-This is a salesman helper app for my brother company 
-###This project of my brother's company Syngenta Company.
+This is a salesman helper app for my brother company. <br/> 
+
+###This project of my brother's company Syngenta Company.<br/>
 - add product details
 - calculates  product cost by her each product cost.
 - total sales cost.
