@@ -11,10 +11,12 @@ import com.example.syngenta.R;
 public class CountViewHolder extends RecyclerView.ViewHolder {
     TextView allInfo;
     TextView sampleTotal;
+    TextView sampleTotaldesign;
 
     public CountViewHolder(@NonNull View itemView) {
         super(itemView);
         allInfo = itemView.findViewById(R.id.allInfo);
         sampleTotal = itemView.findViewById(R.id.totalPriceForAproduct);
+        sampleTotaldesign = itemView.findViewById(R.id.totalPriceForAproductDesign);
     }
 }

@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.syngenta.MainActivity;
 import com.example.syngenta.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CustomAdapterForCountAll extends RecyclerView.Adapter<CountViewHolder> {
@@ -19,7 +18,6 @@ public class CustomAdapterForCountAll extends RecyclerView.Adapter<CountViewHold
     List<String> listDataALL;
     List<String> price;
     List<String> cartonNumber;
-    List<Integer> all = new ArrayList<>();
 
 
     public CustomAdapterForCountAll(MainActivity mainActivity, List<String> listDataALL, List<String> price, List<String> cartonNumber) {
@@ -40,21 +38,17 @@ public class CustomAdapterForCountAll extends RecyclerView.Adapter<CountViewHold
     @Override
     public void onBindViewHolder(@NonNull CountViewHolder holder, int position) {
         String allinfo = listDataALL.get(position);
-        int productPrice = Integer.parseInt(price.get(position));
-        int cartonNumbers = Integer.parseInt(cartonNumber.get(position));
-        int calculationTotalAmount = cartonNumbers * productPrice;
+        Double productPrice = Double.parseDouble(price.get(position));
+        Double cartonNumbers = Double.parseDouble(cartonNumber.get(position));
+        Double calculationTotalAmount = cartonNumbers * productPrice;
         //for all total
 
         String totalAmount = String.valueOf(calculationTotalAmount);//for each item total
 
-//        all.add(calculationTotalAmount);
-//        if (all.size() == listDataALL.size()) {
-//            for (int i = 0; i < all.size(); i++) {
-//
-//            }
-//        }
+
         holder.allInfo.setText(allinfo);
-        holder.sampleTotal.setText(totalAmount + " Tk");
+        holder.sampleTotal.setText(totalAmount);
+        holder.sampleTotaldesign.setText(price.get(position) + "x" + cartonNumber.get(position)+"  =");
     }
 
     @Override

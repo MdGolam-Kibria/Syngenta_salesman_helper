@@ -41,11 +41,11 @@ public class VerifyPage extends AppCompatActivity {
             Toast.makeText(VerifyPage.this, "no data in your database", Toast.LENGTH_LONG).show();
         }
         while (cursor.moveToNext()) {
-            listData.add(cursor.getString(0) + " \n" + cursor.getString(1) + " \n" + cursor.getString(2) + " \n" + cursor.getString(3) + "\n" + cursor.getString(4));
+            listData.add(cursor.getString(1) + " \n" + cursor.getString(2) + " \n" + cursor.getString(3) + "\n" + cursor.getString(4));
         }
         CustomAdapter customAdapter = new CustomAdapter(VerifyPage.this, listData);
         recyclerView.setAdapter(customAdapter);
-        recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(VerifyPage.this, LinearLayoutManager.HORIZONTAL, 16));
+        recyclerView.addItemDecoration(new MyRecyclerViewDividerItemDecoration(VerifyPage.this, LinearLayoutManager.VERTICAL, 22));
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(VerifyPage.this, recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
@@ -60,7 +60,6 @@ public class VerifyPage extends AppCompatActivity {
             }
         }));
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
@@ -100,4 +99,9 @@ public class VerifyPage extends AppCompatActivity {
         alertDialog.show();
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(VerifyPage.this,FirstPage.class));
+        super.onBackPressed();
+    }
 }

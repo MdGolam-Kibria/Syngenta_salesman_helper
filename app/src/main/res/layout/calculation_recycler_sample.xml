@@ -3,37 +3,65 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="140dp"
+    android:layout_height="100dp"
     android:orientation="horizontal">
-
 
     <TextView
         android:id="@+id/allInfo"
-        android:layout_width="170dp"
-        android:layout_height="140dp"
-        android:text="allProductInfoallProductInfoallProductInfoallProductInfoallProductInfoallProductInfoallProductInfo"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="7dp"
+        android:text="Amister Top"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#983D3D"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/change"
         app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.145" />
-    <LinearLayout
-        android:gravity="center"
-        android:orientation="vertical"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
         <TextView
             android:id="@+id/totalPriceForAproduct"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
             android:text="total"
-            android:textStyle="bold"
-            android:gravity="center_horizontal"
-            android:textSize="25dp"
+            android:textAlignment="viewEnd"
             android:textColor="#E91E63"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.867"
+            app:layout_constraintStart_toStartOf="@+id/totalPriceForAproductDesign"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.51" />
+
+        <TextView
+            android:id="@+id/totalPriceForAproductDesign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="total caunt"
+            android:textAlignment="textStart"
+            android:textColor="#278832"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.137"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </LinearLayout>

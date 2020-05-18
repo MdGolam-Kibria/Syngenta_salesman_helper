@@ -86,51 +86,20 @@ public class FirstPage extends AppCompatActivity {
         verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                MyDataBaseHelper myDataBaseHelper = new MyDataBaseHelper(getApplicationContext());
-//                Cursor cursor = myDataBaseHelper.showAll();
-//                if (cursor.getCount() == 0) {
-//                    showAllData("noData", "no any data in your Database");
-//                    Toast.makeText(FirstPage.this, "no data in your database", Toast.LENGTH_LONG).show();
-//                }
-//                StringBuffer stringBuffer = new StringBuffer();
-//                while (cursor.moveToNext()) {
-//                    stringBuffer.append("id = " + cursor.getString(0) + "\n" + "name = " + cursor.getString(1) + "\n"
-//                            + "size = " + cursor.getString(2) + "\n"
-//                            + "price = " + cursor.getString(3) + "\n"
-//                            + "carton = " + cursor.getString(4) + "\n");
-//                    showAllData("all data", stringBuffer.toString());
-//
-//                }
-                startActivity(new Intent(FirstPage.this,VerifyPage.class));
+                MyDataBaseHelper myDataBaseHelper = new MyDataBaseHelper(getApplicationContext());
+                Cursor cursor = myDataBaseHelper.showAll();
+                if (cursor.getCount()==0){
+                    Toast.makeText(FirstPage.this, "No Any Data in your database please add some data", Toast.LENGTH_LONG).show();
+                }else if (cursor.getCount()>0){
+                    startActivity(new Intent(FirstPage.this,VerifyPage.class));
+                }
             }
         });
     }
 
-
-//    public void verify(MenuItem item) {
-//        if (item.getItemId() == R.id.verifyButton) {
-//
-//            MyDataBaseHelper myDataBaseHelper = new MyDataBaseHelper(getApplicationContext());
-//            Cursor cursor = myDataBaseHelper.showAll();
-//            if (cursor.getCount() == 0) {
-//                showAllData("noData", "no any data in your Database");
-//                Toast.makeText(FirstPage.this, "no data in your database", Toast.LENGTH_LONG).show();
-//            }
-//            StringBuffer stringBuffer = new StringBuffer();
-//            while (cursor.moveToNext()) {
-//                stringBuffer.append("id = " + cursor.getString(0) + "\n" + "name = " + cursor.getString(1) + "\n"
-//                        + "email = " + cursor.getString(2) + "\n"
-//                        + "address = " + cursor.getString(3) + "\n"
-//                        + "password = " + cursor.getString(4) + "\n");
-//                showAllData("all data", stringBuffer.toString());
-//
-//            }
-//
-//        }
-//    }
-
-    private void showAllData(String allData, String databaseData) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(allData).setMessage(databaseData).setCancelable(true).create().show();
+    @Override
+    public void onBackPressed() {
+        this.finish();
+        super.onBackPressed();
     }
 }
