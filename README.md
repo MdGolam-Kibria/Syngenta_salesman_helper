@@ -12,6 +12,6 @@ This is a salesman helper app for my brother company. <br/>
 - Delete a suitable product
 - Edit a product details using sqllite databases.
 - more update comming soon like until a selected date product sales calculation's edit delete with more update. 
-##3 Adding ItemTouchHelper swipe features like this,
+##3 Adding ItemTouchHelper swipe features like this, <br/>
 
 ![image](https://user-images.githubusercontent.com/61331272/82250508-68fb3500-996d-11ea-913a-34314fa13ce2.png)
