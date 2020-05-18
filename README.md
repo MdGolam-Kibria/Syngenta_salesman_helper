@@ -14,4 +14,4 @@ This is a salesman helper app for my brother company. <br/>
 - more update comming soon like until a selected date product sales calculation's edit delete with more update. 
 ##3 Adding ItemTouchHelper swipe features like this,
 
-https://camo.githubusercontent.com/42f308bce66c3ba9e32195887eb75c2e35da7d46/68747470733a2f2f786162617261732e6769746875622e696f2f52656379636c65725669657753776970654465636f7261746f722f696d672f73637265656e30312e706e67
+![image](https://user-images.githubusercontent.com/61331272/82250508-68fb3500-996d-11ea-913a-34314fa13ce2.png)
