@@ -14,5 +14,6 @@ This is a salesman helper app for my brother company. <br/>
 - more update comming soon like until a selected date product sales calculation's edit delete with more update. 
 <br/>
 ##3 Adding ItemTouchHelper swipe features like this, <br/>
+<img src="https://user-images.githubusercontent.com/61331272/82250508-68fb3500-996d-11ea-913a-34314fa13ce2.png" alt="Girl in a jacket" width="100" height="100">
 
-![image](https://user-images.githubusercontent.com/61331272/82250508-68fb3500-996d-11ea-913a-34314fa13ce2.png)
+![image]()
