@@ -1,6 +1,8 @@
 package com.example.syngenta.countAll;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +21,6 @@ public class CustomAdapterForCountAll extends RecyclerView.Adapter<CountViewHold
     List<String> price;
     List<String> cartonNumber;
 
-
     public CustomAdapterForCountAll(MainActivity mainActivity, List<String> listDataALL, List<String> price, List<String> cartonNumber) {
         this.context = mainActivity;
         this.listDataALL = listDataALL;
@@ -35,8 +36,9 @@ public class CustomAdapterForCountAll extends RecyclerView.Adapter<CountViewHold
         return new CountViewHolder(view);
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
-    public void onBindViewHolder(@NonNull CountViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final CountViewHolder holder, final int position) {
         String allinfo = listDataALL.get(position);
         Double productPrice = Double.parseDouble(price.get(position));
         Double cartonNumbers = Double.parseDouble(cartonNumber.get(position));
@@ -48,7 +50,7 @@ public class CustomAdapterForCountAll extends RecyclerView.Adapter<CountViewHold
 
         holder.allInfo.setText(allinfo);
         holder.sampleTotal.setText(totalAmount);
-        holder.sampleTotaldesign.setText(price.get(position) + "x" + cartonNumber.get(position)+"  =");
+        holder.sampleTotaldesign.setText(price.get(position) + "x" + cartonNumber.get(position) + "  =");
     }
 
     @Override

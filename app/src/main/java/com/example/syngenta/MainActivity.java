@@ -3,6 +3,7 @@ package com.example.syngenta;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Canvas;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -94,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 int responce = myDataBaseHelper1.delete(String.valueOf(mainPosition));
                 if (responce > 0) {
                     Toast.makeText(MainActivity.this, "Delete Data", Toast.LENGTH_SHORT).show();
+
                     customAdapter.notifyDataSetChanged();
                     MyDataBaseHelper data = new MyDataBaseHelper(getApplicationContext());
                     Cursor cursor1 = data.showAll();
