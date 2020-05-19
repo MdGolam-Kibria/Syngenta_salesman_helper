@@ -111,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
                 new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
                         .addBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.red))
                         .addActionIcon(R.drawable.ic_delete_sweep_black_24dp)
+                        .addSwipeLeftLabel("Delete")
+                        .addSwipeRightLabel("Delete")
                         .create()
                         .decorate();
                 super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
