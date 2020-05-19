@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         /**
          * end swipe action
          */
-        itemTouchHelpers.attachToRecyclerView(totalCalRecyccler);
+        itemTouchHelpers.attachToRecyclerView(totalCalRecyccler);//add swipe action in my RecyclerView
 
     }
 
