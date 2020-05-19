@@ -72,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
         final CustomAdapterForCountAll customAdapter = new CustomAdapterForCountAll(MainActivity.this, listDataALL, price, cartonNumber);
         totalCalRecyccler.setAdapter(customAdapter);
         totalCalRecyccler.addItemDecoration(new MyRecyclerViewDividerItemDecoration(MainActivity.this, LinearLayoutManager.VERTICAL, 22));
+        /**
+         * start swipe action
+         */
         ItemTouchHelper.SimpleCallback callback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
@@ -119,6 +122,9 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         ItemTouchHelper itemTouchHelpers = new ItemTouchHelper(callback);
+        /**
+         * end swipe action
+         */
         itemTouchHelpers.attachToRecyclerView(totalCalRecyccler);
 
     }
