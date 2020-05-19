@@ -3,11 +3,14 @@ package com.example.syngenta;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -72,15 +75,13 @@ public class FirstPage extends AppCompatActivity {
                 if (id == -1) {
                     Toast.makeText(FirstPage.this, "not save", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(FirstPage.this, "save", Toast.LENGTH_LONG).show();
+                    Toast.makeText(FirstPage.this, "Save Product Info", Toast.LENGTH_LONG).show();
                     name.setText("");
                     size.setText("");
                     price.setText("");
                     carton.setText("");
-                    name.requestFocus();
-                    return;
+                    carton.onEditorAction(EditorInfo.IME_ACTION_DONE);//for hide keyboard
                 }
-
             }
         });
         verify.setOnClickListener(new View.OnClickListener() {
