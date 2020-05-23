@@ -5,4 +5,10 @@
     <item android:id="@+id/action_verify"
         android:title="Count all"
         app:showAsAction="ifRoom|withText" />
+
+    <item
+        android:id="@+id/update"
+        android:icon="@drawable/ic_edit_black_24dp"
+        android:title="Custom"
+        app:showAsAction="ifRoom|withText" />
 </menu>

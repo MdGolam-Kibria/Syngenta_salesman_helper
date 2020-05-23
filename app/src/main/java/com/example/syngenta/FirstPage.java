@@ -1,12 +1,16 @@
 package com.example.syngenta;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -89,13 +93,60 @@ public class FirstPage extends AppCompatActivity {
             public void onClick(View v) {
                 MyDataBaseHelper myDataBaseHelper = new MyDataBaseHelper(getApplicationContext());
                 Cursor cursor = myDataBaseHelper.showAll();
-                if (cursor.getCount()==0){
+                if (cursor.getCount() == 0) {
                     Toast.makeText(FirstPage.this, "No Any Data in your database please add some data", Toast.LENGTH_LONG).show();
-                }else if (cursor.getCount()>0){
-                    startActivity(new Intent(FirstPage.this,VerifyPage.class));
+                } else if (cursor.getCount() > 0) {
+                    startActivity(new Intent(FirstPage.this, VerifyPage.class));
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.main_list, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.update:
+                actionUpdateHandle();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void actionUpdateHandle() {
+        Toast.makeText(this, "cilck update", Toast.LENGTH_SHORT).show();
+
+        final androidx.appcompat.app.AlertDialog alertDialog = new androidx.appcompat.app.AlertDialog.Builder(FirstPage.this).create();
+        alertDialog.setTitle("Alert");
+        alertDialog.setMessage("Are you sure all your calculations are correct?");
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.setButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE, "Add",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                       // startActivity(new Intent(FirstPage.this, MainActivity.class));
+                        Toast.makeText(FirstPage.this, "Add", Toast.LENGTH_LONG).show();
+                    }
+                });
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Update", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                 Toast.makeText(FirstPage.this, "update product", Toast.LENGTH_LONG).show();
+            }
+        });
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(FirstPage.this, "Cancel", Toast.LENGTH_LONG).show();
+                alertDialog.dismiss();
+            }
+        });
+        alertDialog.show();
     }
 
     @Override
